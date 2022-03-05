@@ -8,7 +8,7 @@ export default class contatoCliente {
      static addData(param: Contato) {
         return new Promise((resolve, reject) =>db.transaction(
             tx => {
-                tx.executeSql(`insert into ${table} (nome,email,cpf,marca) 
+                tx.executeSql(`insert into ${table} (nome,email,proprietarios,cpf,placa, marca) 
                 values (?,?,?,?,?)`, 
                 [param.nome, param.placa, param.ano, param.marca,param.proprietario], 
                 (_, { insertId, rows }) => {
