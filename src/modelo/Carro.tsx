@@ -6,14 +6,14 @@ export class Contato{
     public nome : string;
     public proprietario : string;
     public placa : string;
-    public ano : number;
+    public ano : string;
     public marca : string;
      
     
 
 
     toString(){
-        return this.id+''+this.nome+''
+        return this.id+''+this.nome+''+
         this.proprietario+''+this.placa+''+this.ano+''+this.marca;
     }
 }

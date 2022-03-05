@@ -19,7 +19,7 @@ export default class DatabaseInit{
                     nome Text,
                     proprietario Text,
                     placa Text,
-                    ano integer,
+                    ano Text,
                     marca Text
                     );`
             ];
@@ -32,7 +32,7 @@ export default class DatabaseInit{
                     nome Text,
                     proprietario Text,
                     placa Text,
-                    ano integer,
+                    ano Text,
                     marca text);`
                 ]
             }

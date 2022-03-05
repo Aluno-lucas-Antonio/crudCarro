@@ -9,7 +9,7 @@ export default class contatoCliente {
         return new Promise((resolve, reject) =>db.transaction(
             tx => {
                 tx.executeSql(`insert into ${table} (nome,email,proprietarios,cpf,placa, marca) 
-                values (?,?,?,?,?)`, 
+                values (?,?,?,?,?,?)`, 
                 [param.nome, param.placa, param.ano, param.marca,param.proprietario], 
                 (_, { insertId, rows }) => {
                     console.log("id insert: " + insertId);
@@ -36,7 +36,7 @@ export default class contatoCliente {
 
      static updateByObjeto(param: Contato) {
         return new Promise((resolve, reject) =>db.transaction(tx => {
-                tx.executeSql(`update ${table} set nome = ? , placa = ? , ano = ?, marca = ? where id = ?;`, [param.nome,  param.placa, param.ano, param.marca, param.id], () => {
+                tx.executeSql(`update ${table} set nome = ? , proprietario = ?,placa = ? , ano = ?, marca = ? where id = ?;`, [param.nome, param.proprietario, param.placa, param.ano, param.marca, param.id], () => {
                 }), (sqlError) => {
                     console.log(sqlError);
                 }}, (txError) => {
